@@ -1,6 +1,10 @@
 ---
 - name: Backup SSHD config
   command: cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+  - copy:
+      src: /etc/ssh/sshd_config
+      dest: /etc/ssh/sshd_config
+      backup: yes
 #
 #- name: Ensure firewalld is started
 #  service:
