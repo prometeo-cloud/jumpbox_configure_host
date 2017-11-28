@@ -1,0 +1,41 @@
+---
+- name: Backup SSHD config
+  command: cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+#
+#- name: Ensure firewalld is started
+#  service:
+#    name: firewalld
+#    state: started
+#    enabled: yes
+#
+#- name: Allow SSH on specified port
+#  command: firewall-cmd --permanent --add-port={{ INCOMING_SSH_PORT }}/tcp
+#
+#- name: Bounce firewalld
+#  service:
+#    name: firewalld
+#    state: restarted
+#
+#- name: Ensuring OpenSSH server is installed and stopped ready to configure
+#  yum:
+#    name: openssh-server
+#    state: latest
+#  service:
+#    name: openssh-server
+#    enabled: yes
+#    state: started
+#
+#- name: Amend SSHD config
+#  lineinfile:
+#    dest: /etc/ssh/sshd_config
+#    regexp: ^#? *?(p|P)ort .*
+#    line: "Port {{ listening_ssh_port }}"
+#  lineinfile:
+#    dest: /etc/ssh/sshd_config
+#    regexp: ^#? *?(p|P)asswordAuthentication .*
+#    line: "PasswordAuthentication no"
+#  lineinfile:
+#    dest: /etc/ssh/sshd_config
+#    regexp: ^#? *?(p|P)ermitRootLogin .*
+#    line: "PermitRootLogin no"
+...
